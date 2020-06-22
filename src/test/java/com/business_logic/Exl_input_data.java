@@ -38,6 +38,11 @@ public class Exl_input_data {
 		return password;
 	}
 	
+	public String SearchItem() throws BiffException, IOException , NullPointerException{
+		 
+		String searchItem =  SheetData().getCell(1,2).getContents();					
+		return searchItem;
+	}
 	
 		
 	
