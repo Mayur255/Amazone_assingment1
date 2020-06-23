@@ -15,11 +15,8 @@ import io.appium.java_client.android.AndroidDriver;
 public class Device_capb extends Base_class {
 
 	Properties prop = new Properties();
-
 	public Properties OR;
-
 	public File file = null;
-
 	public FileReader filereader;
 
 	private static String ANDROID_Device;
@@ -59,16 +56,9 @@ public class Device_capb extends Base_class {
 		caps.setCapability("appActivity", "com.amazon.mShop.home.HomeActivity");
 
 		try {
-
-			System.out.println("@@@@@@@@@@@@@");
-
 			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
-
 		} catch (MalformedURLException e) {
 			System.out.println("&&&&&&&&&&" + e.getMessage());
 		}
-		System.out.println("==================");
-
 	}
-
 }

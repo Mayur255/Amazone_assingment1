@@ -27,7 +27,6 @@ public class Exl_input_data {
 	public String Username() throws BiffException, IOException , NullPointerException{
 
 		String username = SheetData().getCell(0,1).getContents();	
-		System.out.println("==="+username);
 		return username;
 	}
 	

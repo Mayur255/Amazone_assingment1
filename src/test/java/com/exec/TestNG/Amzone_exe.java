@@ -12,8 +12,10 @@ import com.business_logic.Device_capb;
 import HTML_REPORTS.HTMLReportGenerator;
 import core.FileInput;
 import io.appium.java_client.AppiumDriver;
+import page_Object.Card_page;
 import page_Object.Home_Page_Method;
 import page_Object.Login_Page_Method;
+import page_Object.Product_detail_page;
 import page_Object.Sign_In_Page_Method;
 
 public class Amzone_exe {
@@ -35,7 +37,16 @@ public class Amzone_exe {
 		Home_Page_Method search = new Home_Page_Method(driver);
 		search.HomePageDisplayed();
 		search.EnterSearchItem();
-		search.verify_product();
+		
+		Product_detail_page prod=new Product_detail_page(driver);
+		prod.verify_product();
+		prod.Click_See_all_buying_option();
+		prod.Add_card();
+		
+		Card_page crd=new Card_page(driver);
+		crd.verify_card_product();
+		
+		
 
 	}
 

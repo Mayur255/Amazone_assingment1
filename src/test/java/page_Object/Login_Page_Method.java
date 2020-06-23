@@ -58,9 +58,7 @@ public class Login_Page_Method extends Base_class {
 			Assert.fail("Failed to load LogIn Page");
 			HTMLReportGenerator.StepDetails("Pass", "- Sign In page is  not displyed", "",
 					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
-
 		}
-
 	}
 
 	/**
@@ -75,7 +73,6 @@ public class Login_Page_Method extends Base_class {
 			Reporter.log("=====" + password);
 			signIn(username, password); // Calling login method
 			Assert.assertTrue(true, "Login Successful");
-
 		} catch (Exception e) {
 			Assert.fail("Failed to enter login details and Continue");
 		}
@@ -99,15 +96,11 @@ public class Login_Page_Method extends Base_class {
 			buttonLogin.click();
 			HTMLReportGenerator.StepDetails("Pass", "- Click on login button", "",
 					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
-
 		} catch (Exception e) {
 			Reporter.log("error");
 			Assert.fail("Failed to enter login details and Continue");
 			HTMLReportGenerator.StepDetails("Fail", "- Wrong Locator " + e, "",
 					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
-
 		}
-
 	}
-
 }
