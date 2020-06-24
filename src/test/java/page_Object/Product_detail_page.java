@@ -25,6 +25,7 @@ import HTML_REPORTS.TakeScreenShot;
 public class Product_detail_page extends Base_class {
 
 	WebDriverWait wait = new WebDriverWait(driver, 20);
+	static String pro_name=null;
 
 	public Product_detail_page(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -52,7 +53,7 @@ public class Product_detail_page extends Base_class {
 				TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
 
 		wait.until(ExpectedConditions.visibilityOfAllElements(product_name));
-		String pro_name = product_name.getText();
+		pro_name = product_name.getText();
 		Reporter.log("Displayed product name" + pro_name);
 		assertEquals(pro_name, Product_decr);
 		HTMLReportGenerator.StepDetails("Pass", "- Verify search text " + pro_name, "",

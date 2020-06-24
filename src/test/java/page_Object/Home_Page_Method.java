@@ -37,7 +37,7 @@ public class Home_Page_Method extends Base_class {
 	@FindBy(how = How.XPATH, using = "//*[@resource-id='com.amazon.mShop.android.shopping:id/rs_search_src_text']")
 	private WebElement txtBoxSearch;
 
-	@FindBy(how = How.XPATH, using = "//*[@resource-id=\"com.amazon.mShop.android.shopping:id/iss_search_dropdown_item_query_builder\"]")
+	@FindBy(how = How.XPATH, using = "//*[@resource-id='com.amazon.mShop.android.shopping:id/iss_search_dropdown_item_query_builder']")
 	private WebElement buttonAppendSearch;
 
 	@FindBy(how = How.XPATH, using = "//*[@resource-id='com.amazon.mShop.android.shopping:id/iss_search_dropdown_item_text']")
@@ -71,7 +71,6 @@ public class Home_Page_Method extends Base_class {
 					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
 			
 			wait.until(ExpectedConditions.visibilityOfAllElements(productSelected));
-
 			productSelected.click();			
 			HTMLReportGenerator.StepDetails("Pass", "- Selected search Item in dropdown list ", "",
 					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));

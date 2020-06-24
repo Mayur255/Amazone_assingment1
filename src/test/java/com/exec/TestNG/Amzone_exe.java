@@ -12,7 +12,7 @@ import com.business_logic.Device_capb;
 import HTML_REPORTS.HTMLReportGenerator;
 import core.FileInput;
 import io.appium.java_client.AppiumDriver;
-import page_Object.Card_page;
+import page_Object.Cart_page;
 import page_Object.Home_Page_Method;
 import page_Object.Login_Page_Method;
 import page_Object.Product_detail_page;
@@ -43,8 +43,8 @@ public class Amzone_exe {
 		prod.Click_See_all_buying_option();
 		prod.Add_card();
 		
-		Card_page crd=new Card_page(driver);
-		crd.verify_card_product();
+		Cart_page crd=new Cart_page(driver);
+		crd.verify_cart_product();
 		
 		
 
