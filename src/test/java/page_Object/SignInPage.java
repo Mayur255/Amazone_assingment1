@@ -15,15 +15,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import com.business_logic.Base_class;
+import com.business_logic.BaseClass;
 
 import HTML_REPORTS.HTMLReportGenerator;
 import HTML_REPORTS.TakeScreenShot;
 
-public class Sign_In_Page_Method extends Base_class {
+public class SignInPage extends BaseClass {
 	WebDriverWait wait = new WebDriverWait(driver, 30);
 
-	public Sign_In_Page_Method(WebDriver driver) {
+	public SignInPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
@@ -33,14 +33,13 @@ public class Sign_In_Page_Method extends Base_class {
 	public void SignInPageDisplayed() throws InterruptedException, IOException {
 		try {
 			wait.until(ExpectedConditions.visibilityOfAllElements(buttonSignIn));
-			boolean b = buttonSignIn.isDisplayed();
 			assertTrue(buttonSignIn.isDisplayed());
 			HTMLReportGenerator.StepDetails("Pass", "- Sign In page is displyed", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 		} catch (NoSuchElementException e) {
 			Reporter.log("=====");
 			HTMLReportGenerator.StepDetails("Fail", "- Sign In page is not displyed", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 		}
 	}
 
@@ -51,7 +50,7 @@ public class Sign_In_Page_Method extends Base_class {
 		try {
 			buttonSignIn.click();
 			HTMLReportGenerator.StepDetails("Pass", "- Click on Sign In button", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 			Reporter.log("Click on Sign in btn");
 		} catch (Exception e) {
 			Assert.fail("Sign in button is not clickable");

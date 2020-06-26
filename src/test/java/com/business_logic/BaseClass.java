@@ -5,7 +5,7 @@ import java.util.Date;
 
 import io.appium.java_client.AppiumDriver;
 
-public class Base_class {
+public class BaseClass {
 
 	protected static AppiumDriver driver;
 	public static String Get_ImageFilePath() {

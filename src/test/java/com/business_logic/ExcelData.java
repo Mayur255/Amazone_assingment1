@@ -7,7 +7,7 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
-public class Exl_input_data {
+public class ExcelData {
 	
 	
 	public File file = null;

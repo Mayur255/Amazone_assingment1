@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class Device_capb extends Base_class {
+public class DeviceCapb extends BaseClass {
 
 	Properties prop = new Properties();
 	public Properties OR;

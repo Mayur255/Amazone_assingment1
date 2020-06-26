@@ -7,18 +7,18 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.business_logic.Device_capb;
+import com.business_logic.DeviceCapb;
 
 import HTML_REPORTS.HTMLReportGenerator;
 import core.FileInput;
 import io.appium.java_client.AppiumDriver;
-import page_Object.Cart_page;
-import page_Object.Home_Page_Method;
-import page_Object.Login_Page_Method;
-import page_Object.Product_detail_page;
-import page_Object.Sign_In_Page_Method;
+import page_Object.CartPage;
+import page_Object.HomePage;
+import page_Object.LoginPage;
+import page_Object.ProductDetailPage;
+import page_Object.SignInPage;
 
-public class Amzone_exe {
+public class Amzone_Exe {
 	FileInput files = new FileInput();
 
 	static AppiumDriver driver;
@@ -26,25 +26,25 @@ public class Amzone_exe {
 	@Test
 	public void testSearchAndCompare() throws Exception {
 
-		Sign_In_Page_Method meth = new Sign_In_Page_Method(driver);
+		SignInPage meth = new SignInPage(driver);
 		meth.SignInPageDisplayed();
 		meth.clickSignInButton();
 
-		Login_Page_Method login_page = new Login_Page_Method(driver);
+		LoginPage login_page = new LoginPage(driver);
 		login_page.verifyLogInPageDisplayed();
 		login_page.userLogIn();
 
-		Home_Page_Method search = new Home_Page_Method(driver);
-		search.HomePageDisplayed();
-		search.EnterSearchItem();
+		HomePage search = new HomePage(driver);
+		search.homePageDisplayed();
+		search.enterSearchItem();
 		
-		Product_detail_page prod=new Product_detail_page(driver);
-		prod.verify_product();
-		prod.Click_See_all_buying_option();
-		prod.Add_card();
+		ProductDetailPage prod=new ProductDetailPage(driver);
+		prod.verifyProduct();
+		prod.ClickSeeAllBuyingOption();
+		prod.AddCard();
 		
-		Cart_page crd=new Cart_page(driver);
-		crd.verify_cart_product();
+		CartPage crd=new CartPage(driver);
+		crd.verifyCartProduct();
 		
 		
 
@@ -55,7 +55,7 @@ public class Amzone_exe {
 
 		Reporter.log("Run the before");
 
-		Device_capb dev = new Device_capb();
+		DeviceCapb dev = new DeviceCapb();
 		dev.loadCapabilities();
 		dev.startAppium();
 

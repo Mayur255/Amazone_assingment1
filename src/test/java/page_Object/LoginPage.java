@@ -14,20 +14,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import com.business_logic.Base_class;
-import com.business_logic.Exl_input_data;
+import com.business_logic.BaseClass;
+import com.business_logic.ExcelData;
 
 import HTML_REPORTS.HTMLReportGenerator;
 import HTML_REPORTS.TakeScreenShot;
 import io.appium.java_client.MobileElement;;
 
-public class Login_Page_Method extends Base_class {
+public class LoginPage extends BaseClass {
 
 	WebDriverWait wait = new WebDriverWait(driver, 20);
 
-	Exl_input_data files = new Exl_input_data();
+	ExcelData files = new ExcelData();
 
-	public Login_Page_Method(WebDriver driver) {
+	public LoginPage(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
 	}
@@ -52,26 +52,26 @@ public class Login_Page_Method extends Base_class {
 			assertTrue(textBoxMobileNumber.isDisplayed());
 
 			HTMLReportGenerator.StepDetails("Pass", "- Sign In page is displyed", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 			Reporter.log("page is diplayed");
 		} catch (NoSuchElementException e) {
 			Assert.fail("Failed to load LogIn Page");
 			HTMLReportGenerator.StepDetails("Pass", "- Sign In page is  not displyed", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 		}
 	}
 
 	/**
-	 * User login
+	 * This method fetches the username and password
 	 */
-	public Login_Page_Method userLogIn() {
+	public LoginPage userLogIn() {
 		try {
 			Reporter.log("Fatching data");
 			String username = files.Username(); // Fetching username from TestData.xls
 			String password = files.Password(); // Fetching login password from TestData.xls
 			Reporter.log("====" + username);
 			Reporter.log("=====" + password);
-			signIn(username, password); // Calling login method
+			signIn(username, password); 			// Calling login method
 			Assert.assertTrue(true, "Login Successful");
 		} catch (Exception e) {
 			Assert.fail("Failed to enter login details and Continue");
@@ -79,6 +79,10 @@ public class Login_Page_Method extends Base_class {
 		return this;
 	}
 
+	
+	/**
+	 * This method is use to Sign in the application
+	 */
 	public void signIn(String mobile_no, String pass) throws IOException {
 		try {
 			Reporter.log("Start");
@@ -87,7 +91,7 @@ public class Login_Page_Method extends Base_class {
 			wait.until(ExpectedConditions.visibilityOfAllElements(textBoxMobileNumber));
 			textBoxMobileNumber.sendKeys(mobile_no);
 			HTMLReportGenerator.StepDetails("Pass", "- Enter Mobile number", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 
 			buttonContinue.click();
 			wait.until(ExpectedConditions.visibilityOfAllElements(textBoxPassword));
@@ -95,12 +99,12 @@ public class Login_Page_Method extends Base_class {
 			wait.until(ExpectedConditions.visibilityOfAllElements(buttonLogin));
 			buttonLogin.click();
 			HTMLReportGenerator.StepDetails("Pass", "- Click on login button", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 		} catch (Exception e) {
 			Reporter.log("error");
 			Assert.fail("Failed to enter login details and Continue");
 			HTMLReportGenerator.StepDetails("Fail", "- Wrong Locator " + e, "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 		}
 	}
 }

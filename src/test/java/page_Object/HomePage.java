@@ -17,20 +17,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import com.business_logic.Base_class;
-import com.business_logic.Exl_input_data;
+import com.business_logic.BaseClass;
+import com.business_logic.ExcelData;
 
 import HTML_REPORTS.HTMLReportGenerator;
 import HTML_REPORTS.TakeScreenShot;
 import bsh.Console;
 import io.appium.java_client.TouchAction;
 
-public class Home_Page_Method extends Base_class {
+public class HomePage extends BaseClass {
 
 	WebDriverWait wait = new WebDriverWait(driver, 20);
-	Exl_input_data files = new Exl_input_data();
+	ExcelData files = new ExcelData();
 
-	public Home_Page_Method(WebDriver driver) {
+	public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
@@ -44,17 +44,21 @@ public class Home_Page_Method extends Base_class {
 	private WebElement productSelected;
 
 	
-	public void HomePageDisplayed() throws IOException, InterruptedException {
+	/**
+	 * Verification of Home page
+	 */
+	
+	public void homePageDisplayed() throws IOException, InterruptedException {
 		try {
 			Reporter.log("txtBoxSearch");
 			wait.until(ExpectedConditions.visibilityOfAllElements(txtBoxSearch));
 			assertTrue(txtBoxSearch.isDisplayed());
 			HTMLReportGenerator.StepDetails("Pass", "-  login successfilly and home page is displyed", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 		} catch (NoSuchElementException e) {
 			Assert.fail("Failed to load Home Page");
 			HTMLReportGenerator.StepDetails("Fail", "-  login unsuccessfilly and home page is not displyed", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 		}
 	}
 
@@ -62,18 +66,18 @@ public class Home_Page_Method extends Base_class {
 	 * Enter the search keyword in search box and select value from auto suggestion
 	 */
 
-	public void EnterSearchItem() {
+	public void enterSearchItem() {
 		try {
 			txtBoxSearch.click();
-			String search_item = files.SearchItem();
-			txtBoxSearch.sendKeys(search_item);
+			String searchItem = files.SearchItem();
+			txtBoxSearch.sendKeys(searchItem);
 			HTMLReportGenerator.StepDetails("Pass", "- Click on search field and Enter search Item ", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 			
 			wait.until(ExpectedConditions.visibilityOfAllElements(productSelected));
 			productSelected.click();			
 			HTMLReportGenerator.StepDetails("Pass", "- Selected search Item in dropdown list ", "",
-					TakeScreenShot.TakeScreenShot(Base_class.Get_ImageFilePath(), driver));
+					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 		} catch (Exception e) {
 			Assert.fail("Search process failed");
 		}
