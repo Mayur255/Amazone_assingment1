@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jun 23 16:08:16 IST 2020</td>
+<td>Started on:</td><td>Fri Jul 10 21:12:22 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>14 seconds (14858 ms)</td>
+<tr><td>Total time:</td><td>19 seconds (19794 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,10 +75,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.exec.TestNG.Amzone_exe.testSearchAndCompare()'><b>testSearchAndCompare</b><br>Test class: com.exec.TestNG.Amzone_exe</td>
-<td><div><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements([Lorg/openqa/selenium/WebElement;)Lorg/openqa/selenium/support/ui/ExpectedCondition;
-	at page_Object.Sign_In_Page_Method.SignInPageDisplayed(Sign_In_Page_Method.java:35)
-	at com.exec.TestNG.Amzone_exe.testSearchAndCompare(Amzone_exe.java:29)
+<td title='com.exec.TestNG.Amzone_Exe.testSearchAndCompare()'><b>testSearchAndCompare</b><br>Test class: com.exec.TestNG.Amzone_Exe</td>
+<td><div><pre>java.lang.NullPointerException
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.isDisplayed(Unknown Source)
+	at page_Object.SignInPage.SignInPageDisplayed(SignInPage.java:52)
+	at com.exec.TestNG.Amzone_Exe.testSearchAndCompare(Amzone_Exe.java:30)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -104,10 +107,13 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2115628016", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2115628016'><pre>java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements([Lorg/openqa/selenium/WebElement;)Lorg/openqa/selenium/support/ui/ExpectedCondition;
-	at page_Object.Sign_In_Page_Method.SignInPageDisplayed(Sign_In_Page_Method.java:35)
-	at com.exec.TestNG.Amzone_exe.testSearchAndCompare(Amzone_exe.java:29)
+</pre></div><a href='#' onClick='toggleBox("stack-trace970535245", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace970535245'><pre>java.lang.NullPointerException
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.isDisplayed(Unknown Source)
+	at page_Object.SignInPage.SignInPageDisplayed(SignInPage.java:52)
+	at com.exec.TestNG.Amzone_Exe.testSearchAndCompare(Amzone_Exe.java:30)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -134,8 +140,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>com.exec.TestNG.Amzone_exe@2038ae61</td></tr>
+<td>5</td>
+<td>com.exec.TestNG.Amzone_Exe@2038ae61</td></tr>
 </table><p>
 </body>
 </html>

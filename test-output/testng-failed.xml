@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.exec.TestNG.Amzone_exe">
+      <class name="com.exec.TestNG.Amzone_Exe">
         <methods>
           <include name="testSearchAndCompare"/>
           <include name="setup"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- com.exec.TestNG.Amzone_exe -->
+      </class> <!-- com.exec.TestNG.Amzone_Exe -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

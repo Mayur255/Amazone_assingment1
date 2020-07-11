@@ -8,27 +8,27 @@
       <![CDATA[Run the after]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14858" started-at="2020-06-23T10:38:16Z" finished-at="2020-06-23T10:38:30Z">
+  <suite name="Default suite" duration-ms="19794" started-at="2020-07-10T15:42:22Z" finished-at="2020-07-10T15:42:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14858" started-at="2020-06-23T10:38:16Z" finished-at="2020-06-23T10:38:30Z">
-      <class name="com.exec.TestNG.Amzone_exe">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.exec.TestNG.Amzone_exe@2038ae61]" name="setup" is-config="true" duration-ms="14329" started-at="2020-06-23T10:38:16Z" finished-at="2020-06-23T10:38:30Z">
+    <test name="Default test" duration-ms="19794" started-at="2020-07-10T15:42:22Z" finished-at="2020-07-10T15:42:42Z">
+      <class name="com.exec.TestNG.Amzone_Exe">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.exec.TestNG.Amzone_Exe@2038ae61]" name="setup" is-config="true" duration-ms="14318" started-at="2020-07-10T15:42:22Z" finished-at="2020-07-10T15:42:37Z">
           <reporter-output>
             <line>
               <![CDATA[Run the before]]>
             </line>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="testSearchAndCompare()[pri:0, instance:com.exec.TestNG.Amzone_exe@2038ae61]" name="testSearchAndCompare" duration-ms="63" started-at="2020-06-23T10:38:30Z" finished-at="2020-06-23T10:38:30Z">
-          <exception class="java.lang.NoSuchMethodError">
-            <message>
-              <![CDATA[org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements([Lorg/openqa/selenium/WebElement;)Lorg/openqa/selenium/support/ui/ExpectedCondition;]]>
-            </message>
+        <test-method status="FAIL" signature="testSearchAndCompare()[pri:0, instance:com.exec.TestNG.Amzone_Exe@2038ae61]" name="testSearchAndCompare" duration-ms="5089" started-at="2020-07-10T15:42:37Z" finished-at="2020-07-10T15:42:42Z">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.NoSuchMethodError: org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements([Lorg/openqa/selenium/WebElement;)Lorg/openqa/selenium/support/ui/ExpectedCondition;
-at page_Object.Sign_In_Page_Method.SignInPageDisplayed(Sign_In_Page_Method.java:35)
-at com.exec.TestNG.Amzone_exe.testSearchAndCompare(Amzone_exe.java:29)
+              <![CDATA[java.lang.NullPointerException
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy7.isDisplayed(Unknown Source)
+at page_Object.SignInPage.SignInPageDisplayed(SignInPage.java:52)
+at com.exec.TestNG.Amzone_Exe.testSearchAndCompare(Amzone_Exe.java:30)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -56,18 +56,18 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NoSuchMethodError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchAndCompare -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.exec.TestNG.Amzone_exe@2038ae61]" name="teardown" is-config="true" duration-ms="429" started-at="2020-06-23T10:38:30Z" finished-at="2020-06-23T10:38:30Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.exec.TestNG.Amzone_Exe@2038ae61]" name="teardown" is-config="true" duration-ms="328" started-at="2020-07-10T15:42:42Z" finished-at="2020-07-10T15:42:42Z">
           <reporter-output>
             <line>
               <![CDATA[Run the after]]>
             </line>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.exec.TestNG.Amzone_exe -->
+      </class> <!-- com.exec.TestNG.Amzone_Exe -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

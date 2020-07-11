@@ -60,10 +60,7 @@ public class Amzone_Exe {
 		dev.startAppium();
 
 		try {
-
-			HTMLReportGenerator.TestSuiteStart("C:\\screenshots\\Automation_Reports\\Automation_Reports.html",
-					"VF_Pack");
-
+			HTMLReportGenerator.TestSuiteStart("C:\\screenshots\\Automation_Reports\\Automation_Reports.html","Amazone_App");
 			HTMLReportGenerator.TestCaseStart("Amazone", "Production_Build_number:001");
 
 		} catch (Exception ex) {

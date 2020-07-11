@@ -3,7 +3,9 @@ package page_Object;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
+import java.time.Duration;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,8 +34,10 @@ public class SignInPage extends BaseClass {
 
 	public void SignInPageDisplayed() throws InterruptedException, IOException {
 		try {
+			
 			wait.until(ExpectedConditions.visibilityOfAllElements(buttonSignIn));
-			assertTrue(buttonSignIn.isDisplayed());
+			Assert.assertTrue(buttonSignIn.isDisplayed());
+			System.out.println("--------true");
 			HTMLReportGenerator.StepDetails("Pass", "- Sign In page is displyed", "",
 					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));
 		} catch (NoSuchElementException e) {

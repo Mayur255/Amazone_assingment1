@@ -4,9 +4,11 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -52,6 +54,12 @@ public class HomePage extends BaseClass {
 		try {
 			Reporter.log("txtBoxSearch");
 			wait.until(ExpectedConditions.visibilityOfAllElements(txtBoxSearch));
+			//Rotate landscape mode
+			driver.rotate(ScreenOrientation.LANDSCAPE);
+			Reporter.log("Waiting for signin page to load");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			//Rotate portrait mode
+			
 			assertTrue(txtBoxSearch.isDisplayed());
 			HTMLReportGenerator.StepDetails("Pass", "-  login successfilly and home page is displyed", "",
 					TakeScreenShot.TakeScreenShot(BaseClass.Get_ImageFilePath(), driver));

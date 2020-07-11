@@ -3,8 +3,10 @@ package page_Object;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -47,7 +49,14 @@ public class LoginPage extends BaseClass {
 	public void verifyLogInPageDisplayed() throws IOException {
 
 		try {
-
+			
+			//Rotate landscape mode
+			driver.rotate(ScreenOrientation.LANDSCAPE);
+			Reporter.log("Waiting for signin page to load");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			//Rotate portrait mode
+			driver.rotate(ScreenOrientation.PORTRAIT);
+			
 			wait.until(ExpectedConditions.visibilityOfAllElements(textBoxMobileNumber));
 			assertTrue(textBoxMobileNumber.isDisplayed());
 
